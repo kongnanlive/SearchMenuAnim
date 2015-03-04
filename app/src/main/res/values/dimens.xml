@@ -3,6 +3,6 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <integer name="duration_bar">2000</integer>
-    <integer name="duration_search">2000</integer>
+    <integer name="duration_bar">800</integer>
+    <integer name="duration_search">800</integer>
 </resources>
