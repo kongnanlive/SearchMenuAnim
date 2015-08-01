@@ -16,16 +16,17 @@
 
 package com.netease.kongnan.searchmenuanim;
 
-import android.app.Activity;
 import android.graphics.drawable.AnimatedVectorDrawable;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     private ImageView iv;
     private TextView text;
@@ -42,9 +43,9 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         iv = (ImageView) findViewById(R.id.search);
         text = (TextView) findViewById(R.id.text);
-        searchToBar = (AnimatedVectorDrawable) getResources().getDrawable(R.drawable.anim_search_to_bar);
-        barToSearch = (AnimatedVectorDrawable) getResources().getDrawable(R.drawable.anim_bar_to_search);
-        interp = AnimationUtils.loadInterpolator(this, android.R.interpolator.linear_out_slow_in);
+        searchToBar = (AnimatedVectorDrawable) ContextCompat.getDrawable(this, R.drawable.anim_search_to_bar);
+        barToSearch = (AnimatedVectorDrawable) ContextCompat.getDrawable(this, R.drawable.anim_bar_to_search);
+        interp = AnimationUtils.loadInterpolator(this, android.R.interpolator.linear);
         duration = getResources().getInteger(R.integer.duration_bar);
         // iv is sized to hold the search+bar so when only showing the search icon, translate the
         // whole view left by half the difference to keep it centered

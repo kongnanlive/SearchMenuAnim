@@ -22,4 +22,4 @@
         android:valueTo="0"
         android:valueType="floatType"
         android:duration="@integer/duration_bar"
-        android:interpolator="@android:interpolator/linear_out_slow_in" />
+        android:interpolator="@android:interpolator/linear" />
