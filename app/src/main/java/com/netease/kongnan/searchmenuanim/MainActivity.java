@@ -12,7 +12,10 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * Updated by @johnjeremih 02-2-2020
  */
+
 
 package com.netease.kongnan.searchmenuanim;
 
@@ -24,6 +27,8 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.core.content.res.ResourcesCompat;
 
 public class MainActivity extends Activity {
 
@@ -40,16 +45,24 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        iv = (ImageView) findViewById(R.id.search);
-        text = (TextView) findViewById(R.id.text);
-        searchToBar = (AnimatedVectorDrawable) getResources().getDrawable(R.drawable.anim_search_to_bar);
-        barToSearch = (AnimatedVectorDrawable) getResources().getDrawable(R.drawable.anim_bar_to_search);
+        iv = findViewById(R.id.search);
+        text = findViewById(R.id.text);
+        searchToBar = (AnimatedVectorDrawable)  ResourcesCompat.getDrawable(getResources(), R.drawable.anim_search_to_bar, null);
+        barToSearch = (AnimatedVectorDrawable)   ResourcesCompat.getDrawable(getResources(), R.drawable.anim_bar_to_search, null);
         interp = AnimationUtils.loadInterpolator(this, android.R.interpolator.linear_out_slow_in);
         duration = getResources().getInteger(R.integer.duration_bar);
         // iv is sized to hold the search+bar so when only showing the search icon, translate the
         // whole view left by half the difference to keep it centered
         offset = -71f * (int) getResources().getDisplayMetrics().scaledDensity;
         iv.setTranslationX(offset);
+        starter();
+    }
+
+    private void starter() {
+        iv.setImageDrawable(barToSearch);
+        barToSearch.start();
+        iv.animate().translationX(offset).setDuration(duration).setInterpolator(interp);
+        text.setAlpha(0f);;
     }
 
     public void animate(View view) {
@@ -67,4 +80,6 @@ public class MainActivity extends Activity {
         }
         expanded = !expanded;
     }
+
+
 }

@@ -22,7 +22,8 @@
     android:layout_height="match_parent"
     android:background="?android:colorPrimary"
     tools:context=".MainActivity"
-    android:onClick="animate">
+    android:onClick="animate"
+    >
 
     <ImageView
         android:id="@+id/search"
@@ -30,17 +31,20 @@
         android:layout_width="150dp"
         android:layout_height="24dp"
         android:src="@drawable/search_bar"
-        android:onClick="animate" />
+        android:contentDescription="@string/path_search" />
 
     <EditText
+        android:onClick="animate"
         android:id="@+id/text"
         android:layout_width="150dp"
         android:layout_height="22dp"
         android:layout_gravity="center"
         android:background="@null"
         android:textSize="12sp"
-        android:paddingStart="4dp"
         android:textColor="?android:colorAccent"
-        android:alpha="0" />
+        android:alpha="0"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        tools:ignore="LabelFor" />
 
 </FrameLayout>
