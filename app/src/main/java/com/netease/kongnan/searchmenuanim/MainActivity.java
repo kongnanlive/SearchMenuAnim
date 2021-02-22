@@ -61,7 +61,7 @@ public class MainActivity extends Activity {
     private void starter() {
         iv.setImageDrawable(barToSearch);
         barToSearch.start();
-        iv.animate().translationX(offset).setDuration(duration).setInterpolator(interp);
+        iv.animate().translationX(offset).setDuration(duration-400).setInterpolator(interp);
         text.setAlpha(0f);;
     }
 
