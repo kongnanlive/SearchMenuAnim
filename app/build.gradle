@@ -1,13 +1,14 @@
 apply plugin: 'com.android.application'
+// Updated by @johnjeremih 02-2-2020
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.2"
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.netease.kongnan.searchmenuanim"
-        minSdkVersion 21
-        targetSdkVersion 21
+        minSdkVersion 24
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
     }
@@ -20,6 +21,6 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:21.0.3'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
 }

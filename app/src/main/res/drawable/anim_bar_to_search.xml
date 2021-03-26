@@ -21,10 +21,10 @@
 
     <target
         android:name="bar"
-        android:animation="@anim/anim_search_empty" />
+        android:animation="@animator/anim_search_empty" />
 
     <target
         android:name="search"
-        android:animation="@anim/anim_bar_fill" />
+        android:animation="@animator/anim_bar_fill" />
 
 </animated-vector>
